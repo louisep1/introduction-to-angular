@@ -8,8 +8,14 @@ import { HousingLocation } from '../housing-location';
 })
 export class HousingListComponent implements OnInit {
 
-  // Type of this property: Array of elements of type housing-location
-  @Input() locationList: HousingLocation[] = []
+  // @Input() - Sharing data between child and parent directives and components
+
+  // !!! So maybe we declare the data type to be received here, data itself is declared in app.components.ts    ==>  but we receive the actual locationList data from app.component.html into housing-list.component.html
+  @Input() locationList: HousingLocation[] = [];
+  // Type of this property: Array of elements of type HousingLocation
+  
+  // filter results - value to be type Array of HousingLocation
+  results:HousingLocation[] = []
 
   constructor() { }
 
@@ -17,7 +23,7 @@ export class HousingListComponent implements OnInit {
   }
 
   searchHousingLocations(searchText: string) {
-    console.log(searchText)
+    this.results = this.locationList
   }
 
 }
