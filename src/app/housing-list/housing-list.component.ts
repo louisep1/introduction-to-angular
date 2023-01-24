@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { HousingLocation } from '../housing-location';
 
 @Component({
   selector: 'app-housing-list',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./housing-list.component.css']
 })
 export class HousingListComponent implements OnInit {
+
+  // Type of this property: Array of elements of type housing-location
+  @Input() locationList: HousingListComponent[] = []
 
   constructor() { }
 
