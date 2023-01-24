@@ -4,6 +4,7 @@
 <!-- angular feature: template syntax -->
 <!-- <article *ngFor="let location of locationList"> -->
 <article *ngFor="let location of results">
+    <img [src]="location.photo" [alt]="location.name">
     <!-- child of p value {{}} is interpolated (inserted into something else) values from the location property -->
     <p>{{location.name}}</p>
     <button (click)="selectHousingLocation(location)">View</button>
