@@ -9,7 +9,7 @@ import { HousingLocation } from '../housing-location';
 export class HousingListComponent implements OnInit {
 
   // Type of this property: Array of elements of type housing-location
-  @Input() locationList: HousingListComponent[] = []
+  @Input() locationList: HousingLocation[] = []
 
   constructor() { }
 
