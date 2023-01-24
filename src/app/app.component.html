@@ -3,8 +3,12 @@
         <img src="../assets/logo.svg" alt="fairhouse">
     </header>
     <section>
-        <app-housing-list [locationList]="housingLocationsList"></app-housing-list>
         <!-- [attributeName]="Data (PropertyName - in this case array of housing properties)" -->
-        <!-- this is the data we're passing into the component -->
+        <!-- [input - new variable data name]="existing variable name of data being passed in" - pass data from this parent component to child app-housing-list -->
+        <app-housing-list [locationList]="housingLocationsList" (selectedLocationEvent)="updateSelectedLocation($event)"></app-housing-list>
+        <!-- (attributeName)="" -->
+        <!-- (output event name)="expression()/event handler being passed in => in this case, it points to a method in our class" -->
+        <!-- click => call method => changes state => re-renders UI -->
+
     </section>
 </main>

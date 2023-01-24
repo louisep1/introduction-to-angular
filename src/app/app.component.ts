@@ -38,4 +38,12 @@ export class AppComponent {
       laundry: false,
     }
   ]
+
+  selectedLocation: HousingLocation | undefined;
+
+  updateSelectedLocation(location: HousingLocation) {
+    // this enables it to be either HousingLocation or undefined
+    this.selectedLocation = location;
+    // updated selectedLocation property to be the object data that get passed from the child component from the click event
+  }
 }
